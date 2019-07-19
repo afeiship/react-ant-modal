@@ -44,12 +44,16 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
+    "antd": "^3.20.3",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "jest": "^24.5.0",
+    "node-sass": "^4.12.0",
     "prettier": "^1.16.4",
     "rake-git": "github:afeiship/rake-git",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-testing-library": "^6.0.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
@@ -58,13 +62,9 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "antd": "^3.20.3",
     "classnames": "^2.2.6",
     "next-sublet": "github:afeiship/next-sublet",
-    "node-sass": "^4.12.0",
     "noop": "github:afeiship/noop",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "prop-types": "^15.7.2"
   }
 }
