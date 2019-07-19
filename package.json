@@ -63,7 +63,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "next-sublet": "github:afeiship/next-sublet",
     "noop": "github:afeiship/noop",
     "prop-types": "^15.7.2"
   }
