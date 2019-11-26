@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from 'noop';
+import noop from '@feizheng/noop';
 import objectAssign from 'object-assign';
 import { Modal } from 'antd';
 
+const CLASS_NAME = 'react-ant-modal';
+
 export default class extends Component {
-  /*===properties start===*/
+  static displayName = CLASS_NAME;
   static propTypes = {
     className: PropTypes.string,
     onCancel: PropTypes.func,
@@ -18,7 +20,6 @@ export default class extends Component {
     onCancel: noop,
     onChange: noop
   };
-  /*===properties end===*/
 
   constructor(inProps) {
     super(inProps);
@@ -26,12 +27,13 @@ export default class extends Component {
     this.state = { value: value };
   }
 
-  componentWillReceiveProps(inProps) {
+  shouldComponentUpdate(inProps){
     const { value } = inProps;
     const _value = this.state.value;
     if (value !== _value) {
       this.change(value);
     }
+    return true;
   }
 
   change(inValue, inCallback) {
@@ -44,7 +46,7 @@ export default class extends Component {
     });
   }
 
-  _onCancel = (inEvent) => {
+  onCancel = (inEvent) => {
     const { onCancel } = this.props;
     this.change(false, () => {
       onCancel(inEvent);
@@ -54,6 +56,6 @@ export default class extends Component {
   render() {
     const { value, onCancel, ...props } = this.props;
     const _value = this.state.value;
-    return <Modal onCancel={this._onCancel} visible={_value} {...props} />;
+    return <Modal onCancel={this.onCancel} visible={_value} {...props} />;
   }
 }

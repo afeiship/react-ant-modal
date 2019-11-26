@@ -1,5 +1,5 @@
 {
-  "name": "react-ant-modal",
+  "name": "@feizheng/react-ant-modal",
   "version": "1.0.0",
   "description": "Modal wrap for antd.",
   "main": "dist/index.js",
@@ -44,26 +44,31 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
-    "antd": "^3.20.3",
+    "@feizheng/rake-git": "^1.2.0",
+    "@feizheng/webpack-lib-kits": "^1.1.0",
+    "antd": "^3.25.3",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "express": "^4.16.4",
     "jest": "^24.5.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.16.4",
-    "rake-git": "github:afeiship/rake-git",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "react-testing-library": "^6.0.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
-    "webpack-lib-kits": "github:afeiship/webpack-lib-kits",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@feizheng/noop": "^1.0.0",
     "classnames": "^2.2.6",
-    "noop": "github:afeiship/noop",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

@@ -1,9 +1,9 @@
 # react-ant-modal
 > Modal wrap for antd.
 
-## install
+## installation
 ```shell
-npm install -S afeiship/react-ant-modal
+npm install -S @feizheng/react-ant-modal
 ```
 
 ## usage
@@ -16,21 +16,38 @@ npm install -S afeiship/react-ant-modal
   ```
 2. import js
   ```js
-  import React from 'react';
+  import ReactAntModal from '../src/main';
   import ReactDOM from 'react-dom';
-  import ReactAntModal from 'react-ant-modal';
-  
-  // your app:
-  class App extends React.Component{
-    render(){
+  import React from 'react';
+  import { Button } from 'antd';
+  import './assets/style.scss';
+
+  class App extends React.Component {
+    state = {
+      value: false
+    };
+
+    _onChange = (e) => {
+      const { value } = e.target;
+      console.log('value:->', value);
+    };
+
+    _onClick = (e) => {
+      this.setState({ value: true });
+    };
+
+    render() {
+      const { value } = this.state;
       return (
-        <ReactAntModal />
-      )
+        <div className="app-container">
+          <Button onClick={this._onClick}>ShowModal</Button>
+          <ReactAntModal onChange={this._onChange} value={value} />
+        </div>
+      );
     }
   }
 
-  // render to dom:
-  ReactDOM.render(<App/>, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
   ```
 
 ## documentation
